@@ -1,0 +1,31 @@
+{
+  "name": "cloud-lab-api",
+  "version": "1.0.0",
+  "description": "REST API for the Cloud Computing Mini Lab.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon --watch src src/index.js"
+  },
+  "keywords": [
+    "cloud",
+    "redis",
+    "queue",
+    "docker"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "redis": "^4.6.13",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
+
+

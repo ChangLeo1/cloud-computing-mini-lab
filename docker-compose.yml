@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: ./services/api
+    ports:
+      - "${PORT:-8080}:8080"
+    environment:
+      PORT: "${PORT:-8080}"
+      REDIS_URL: "${REDIS_URL:-redis://redis:6379}"
+      JOB_QUEUE_KEY: "${JOB_QUEUE_KEY:-cloud:jobs}"
+      JOB_HASH_PREFIX: "${JOB_HASH_PREFIX:-cloud:job:}"
+      LOG_LEVEL: "${LOG_LEVEL:-dev}"
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: ./services/worker
+    environment:
+      REDIS_URL: "${REDIS_URL:-redis://redis:6379}"
+      JOB_QUEUE_KEY: "${JOB_QUEUE_KEY:-cloud:jobs}"
+      JOB_HASH_PREFIX: "${JOB_HASH_PREFIX:-cloud:job:}"
+      LOG_LEVEL: "${LOG_LEVEL:-dev}"
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  redis:
+    image: redis:7.2-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+
