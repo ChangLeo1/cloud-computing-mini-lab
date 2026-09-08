@@ -106,7 +106,7 @@ pytest -q
 pytest --cov=netdiag --cov-report=term-missing
 ```
 
-The repository includes 30+ automated tests plus a manual Windows test plan covering healthy, DNS failure, adapter-down, APIPA/DHCP, gateway, upstream, port, packet-loss/latency, reporting, privacy and repair behaviour.
+The repository includes 30+ automated tests plus a manual Windows test plan covering healthy, DNS failure, adapter-down, APIPA/DHCP, gateway, upstream, port, packet-loss/latency, reporting, privacy and repair behaviour. See `docs/testing.md`.
 
 ## Project structure
 
@@ -117,12 +117,14 @@ network-diagnostic-toolkit/
 ├── config/default.yaml   # targets and thresholds
 ├── examples/             # synthetic/redacted reports
 ├── docs/                 # authorisation, privacy, compliance, service templates
-└── .github/workflows/    # Windows + Ubuntu CI
+└── .github/workflows/    # Windows + Ubuntu CI when used standalone
 ```
 
 ## Commercial use notes
 
 If you use this as part of an IT support service, define the scope in writing, obtain authorisation before testing, minimise collected data, protect reports, and avoid promises that every issue will be fixed. Australian consumer guarantees can apply to services and cannot simply be excluded by a generic disclaimer.
+
+For practical ABN/GST, invoicing and service-operation notes, see `docs/commercial-operation-australia.md`.
 
 ## Licence
 
