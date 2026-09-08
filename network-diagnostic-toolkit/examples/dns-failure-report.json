@@ -1,0 +1,7 @@
+{
+  "scenario": "Synthetic example only",
+  "gateway": "PASS",
+  "public_connectivity": "PASS",
+  "dns": "FAIL",
+  "diagnosis": "DNS"
+}

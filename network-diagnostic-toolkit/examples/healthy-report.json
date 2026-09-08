@@ -1,0 +1,13 @@
+{
+  "tool": "network-diagnostic-toolkit",
+  "version": "1.0.0",
+  "generated_at": "2026-09-08T21:30:00+10:00",
+  "device": {"hostname": "REDACTED", "username": "REDACTED", "os": "Windows 11"},
+  "results": [
+    {"name": "adapters", "status": "pass", "summary": "1 active IPv4 adapter(s) detected", "data": {}},
+    {"name": "gateway_ping", "status": "pass", "summary": "192.168.1.xxx: 0.0% loss, 2.0 ms avg", "data": {"packet_loss_pct": 0, "avg_ms": 2}},
+    {"name": "internet_ping", "status": "pass", "summary": "1.1.1.1: 0.0% loss, 18.0 ms avg", "data": {"packet_loss_pct": 0, "avg_ms": 18}},
+    {"name": "dns_resolution", "status": "pass", "summary": "Resolved cloudflare.com in 25.0 ms", "data": {"response_ms": 25}}
+  ],
+  "diagnosis": {"code": "HEALTHY", "severity": "info", "title": "Basic connectivity appears healthy", "explanation": "Core tests passed.", "recommendations": []}
+}
